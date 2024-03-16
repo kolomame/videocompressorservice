@@ -41,11 +41,11 @@ while True:
 
         with open(os.path.join(dpath, filename),'wb+') as f:
             while data_length > 0:
-            data = connection.recv(data_length if data_length <= stream_rate else stream_rate)
-            f.write(data)
-            print('recieved {} bytes'.format(len(data)))
-            data_length -= len(data)
-            print(data_length)
+                data = connection.recv(data_length if data_length <= stream_rate else stream_rate)
+                f.write(data)
+                print('recieved {} bytes'.format(len(data)))
+                data_length -= len(data)
+                print(data_length)
 
         print('Finished downloading the file from client.')
     except Exception as e:
